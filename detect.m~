@@ -1,0 +1,20 @@
+function [ x, y, gesture ] = detect( sample, template )
+%DETECTOR
+% sample=reduced sample gray image
+% template=reduced binary image
+% x = xPos, y = yPos
+% gesture=fist or palm
+c = normxcorr2(template,sample);
+[ypeak, xpeak] = find(c==max(c(:)));
+
+yoffSet = ypeak-size(template,1);
+xoffSet = xpeak-size(template,2);
+
+xPos = xoffSet + 0.5*size(template,2);
+yPos = yoffSet + 0.5*size(template,1);
+
+r = 0.25*(size(template, 2) + size(template, 1))/2;
+
+
+end
+

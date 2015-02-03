@@ -8,6 +8,8 @@ c = normxcorr2(template,sample);
 
 likelihood = max(max(c));
 [ypeak, xpeak] = find(c==max(c(:)));
+ypeak = ypeak(1);
+xpeak = xpeak(1);
 
 yoffSet = ypeak-size(template,1);
 xoffSet = xpeak-size(template,2);

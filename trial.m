@@ -1,4 +1,4 @@
-RGB = imread('sample1.jpg');
+RGB = imread('f_ur.jpg');
 for n = 1:10
     BW = im2bw(RGB, n/10);
     pause(2);

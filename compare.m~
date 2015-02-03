@@ -1,0 +1,10 @@
+f_lr = imresize(imread('f_lr.jpg'), 0.1);
+p_lr = imresize(imread('p_lr.jpg'), 0.1);
+t_f = im2bw(imresize(imread('template_f.jpg'), 0.1), 0.5);
+
+C1 = normxcorr2(f_lr, t_f);
+a1 = max(C1(:));
+C2 = normxcorr2(p_lr, t_f);
+a2 = max(C2(:));
+disp('a1');
+disp(

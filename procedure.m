@@ -1,3 +1,4 @@
+% a sample procedure illustrating how images are processed and detected
 
 template = im2bw(imresize(imread('template_f.jpg'), 0.1), 0.5); % 0.35p
 imshow(template);

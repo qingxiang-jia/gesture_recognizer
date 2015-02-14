@@ -1,3 +1,5 @@
+% demonstrates how iamge is compared
+
 clc;
 f_lr = imtrim(im2bw(imresize(imread('f_ll.jpg'), 0.1), 0.5), 'NorthWest');
 p_lr = imtrim(im2bw(imresize(imread('p_c.jpg'), 0.1), 0.5), 'NorthWest');

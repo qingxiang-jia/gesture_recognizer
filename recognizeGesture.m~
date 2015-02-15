@@ -4,8 +4,14 @@
 function [gesture, location] = recognizeGesture(fileName, fist, pawn)
 gestureImg = im2bw(imresize(imread(fileName), 0.1), 0.5);
 trimedGestureImg = imtrim(gestureImg);
-fingerCount = countFinger(trimedGestureImg);
-if fingerCount <= 2
+corrFist = ssim(fist, trimedGestureImg);
+corrPawn = ssim(pawn, trimedGestureImg);
+fingerCount = countFinger(
+isFist = max(corrFist(:));
+disp(isFist);
+isPawn = max(corrPawn(:));
+disp(isPawn);
+if isFist > isPawn
     location = detectWhere(gestureImg, fist);
     gesture = 'fist';
 else

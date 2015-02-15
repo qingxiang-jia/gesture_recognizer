@@ -10,7 +10,7 @@ img = imclose(img,strel('disk',5)); % smooth
 img = imclose(img,strel('disk',5)); % smooth again
 img = imclose(img,strel('disk',5)); % smooth again and again
 img = imresize(img, [size(img,1)-20, size(img,2)]);
-imshow(img);
+% imshow(img);
 
 prev = 0;
 curr = 0;

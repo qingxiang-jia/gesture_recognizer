@@ -1,7 +1,6 @@
 % take a gesture and a sequence of templates and return the
 % recognized gestures
-% fist=img file   pawn=img file
-function [gesture, location] = recognizeGesture(fileName, fist, pawn)
+function [gesture, location] = recognizeGesture(fileName)
 gestureImg = im2bw(imresize(imread(fileName), 0.1), 0.5);
 [trimedGestureImg, t, b, l, r] = imtrim(gestureImg);
 fingerCount = countFinger(trimedGestureImg);

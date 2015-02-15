@@ -1,8 +1,4 @@
-function [] = recognize(fileName, f, p)
-    [ges, loc] = recognizeGesture(fileName, f, p);
-%     disp(fileName);
-%     disp(ges);
-%     disp(loc);
-%     disp('  ');
+function [] = recognize(fileName)
+    [ges, loc] = recognizeGesture(fileName);
     fprintf('%s %s %s\n', fileName, ges, loc);
 end

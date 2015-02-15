@@ -1,6 +1,6 @@
 % detect where the given gesture is on the screen
 function location = detectWhere( sample, template )
-%DETECTOR
+%DETECTOR useless
 % sample=reduced sample gray image
 % template=reduced binary image
 % x, y represent the center of the template found

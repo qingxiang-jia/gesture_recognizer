@@ -9,23 +9,23 @@ img = imfill(img, 'holes'); % remove "space" in fist
 img = imclose(img,strel('disk',5)); % smooth
 img = imclose(img,strel('disk',5)); % smooth again
 img = imclose(img,strel('disk',5)); % smooth again and again
-img = imresize(img, [size(img,1)-20, size(img,2)]);
-imshow(img);
+img = imresize(img, [size(img,1)-20, size(img,2)]); % reduce alternating pixel effect
+% imshow(img); uncomment this to see the image to scan
 
-prev = 0;
-curr = 0;
-count = 0;
-maxCount = 0;
-for row=1:5:size(img, 1)
+prev = 0; % previous color value
+curr = 0; % current color value
+count = 0; % number of color changes
+maxCount = 0; % track the maximum count ever encounter
+for row=1:5:size(img, 1) % step size=5, reduce alternating pixel effect
     count = 0;
-    for col=1:size(img, 2)
-        curr = img(row, col);
-        if ne(curr, prev)
+    for col=1:size(img, 2) % horizontal scan
+        curr = img(row, col); % get color value for this [row, col]
+        if ne(curr, prev) % if curr != prev
             count = count + 1;
             prev = curr;
         end
     end
-    maxCount = max(maxCount, count);
+    maxCount = max(maxCount, count); % update maxCount
 end
-maxCount = int8(maxCount/2);
-fprintf('%d fingers\n', maxCount);
+maxCount = int8(maxCount/2); % round to integer
+% fprintf('%d fingers\n', maxCount); uncomment this to see counts

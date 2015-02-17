@@ -72,6 +72,6 @@
 % recognize('t_fail_1.jpg'); % false negative
 % recognize('t_fail_2.jpg'); % false negative
 % recognize('t_fail_3.jpg'); % false positive
-
-% recognize('f_fail_1.jpg'); % false positive
+% recognize('o_fail_1.jpg'); % false positive
+% recognize('o_fail_2.jpg'); % false positive
 

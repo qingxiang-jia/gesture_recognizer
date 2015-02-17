@@ -10,7 +10,7 @@ img = imclose(img,strel('disk',5)); % smooth
 img = imclose(img,strel('disk',5)); % smooth again
 img = imclose(img,strel('disk',5)); % smooth again and again
 img = imresize(img, [size(img,1)-20, size(img,2)]);
-% imshow(img);
+imshow(img);
 
 prev = 0;
 curr = 0;
@@ -28,4 +28,4 @@ for row=1:5:size(img, 1)
     maxCount = max(maxCount, count);
 end
 maxCount = int8(maxCount/2);
-% fprintf('%d fingers\n', maxCount);
+fprintf('%d fingers\n', maxCount);
